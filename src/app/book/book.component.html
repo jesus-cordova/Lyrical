@@ -1,0 +1,34 @@
+<h1>Welcome to book api</h1>
+
+<!--The form that would do the POST meethod in book.service.ts and book.component.ts-->
+<div>
+  <form>
+    <!--property binding with ngModel to get book.title value from the input and passing it into the event button-->
+    Enter Title: <input type="text" [(ngModel)]="book.title" name="title"/><br/>
+    Enter Author: <input type="text" [(ngModel)]="book.author" name="author"/><br/>
+
+    <!--One way data binding by calling the funciton in service.ts-->
+    <button (click)="addBook()">Add Book</button>
+  </form>
+</div>
+
+<!--GET method to display data on the front page from the backend with Spring MVC on a table-->
+<div>
+    <table border ="1">
+      <tr>
+          <th>ID</th>
+          <th>name</th>
+          <th>author</th>
+          <th>actions</th>
+      </tr>
+      <!--we use #ngFor to iterate the data from the database and use the varaible books from book.component.ts to be defined as book-->
+      <!--so it would look like in java similar ot String book = books-->
+      <!--it would use class binding for displaying the data from the database-->
+      <tr *ngFor ="let book of books">
+          <td>{{book.id}}</td>
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>Edit | Delete</td>
+      </tr>
+    </table>
+</div>
