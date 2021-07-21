@@ -1,0 +1,76 @@
+
+
+
+<p>{{question1}}</p>
+
+<!-- (ngSubmit)="onSubmit()" -->
+<form  #quizForm="ngForm">
+<table>
+     <tr><td class="choices"><input type="radio" name="quiz1" value=4 [(ngModel)]="model.q1">{{q1fillers[0]}}</td><td class="choices"><input type="radio" name="quiz1" value="3" [(ngModel)]="model.q1">{{q1fillers[2]}}</td></tr>
+    <tr><td class="choices"><input type="radio" name="quiz1" value="2" [(ngModel)]="model.q1">{{q1fillers[1]}}</td><td class="choices"><input type="radio" name="quiz1" value="1" [(ngModel)]="model.q1">{{q1fillers[3]}}</td></tr>
+   
+</table>
+<p>{{question2}}</p>
+
+<table>
+    <tr><td class="choices"><input type="radio" name="quiz2" value="4" [(ngModel)]="model.q2">{{q2fillers[0]}}</td><td class="choices"><input type="radio" name="quiz2" value="1" [(ngModel)]="model.q2">{{q2fillers[2]}}</td></tr> 
+<tr><td class="choices"><input type="radio" name="quiz2" value="3" [(ngModel)]="model.q2">{{q2fillers[1]}}</td><td class="choices"><input type="radio" name="quiz2" value="2" [(ngModel)]="model.q2">{{q2fillers[3]}}</td></tr>
+</table>
+<p>{{question3}}</p>
+
+<table>
+    <tr><td class="choices"><input type="radio" name="quiz3" value="3" [(ngModel)]="model.q3">{{q3fillers[0]}}</td><td class="choices"><input type="radio" name="quiz3" value="2" [(ngModel)]="model.q3">{{q3fillers[2]}}</td></tr> 
+    <tr><td class="choices"><input type="radio" name="quiz3" value="4" [(ngModel)]="model.q3">{{q3fillers[1]}}</td><td class="choices"><input type="radio" name="quiz3" value="1" [(ngModel)]="model.q3">{{q3fillers[3]}}</td></tr>
+</table>
+<!--[(ngModel)]="model.q3" <button type="submit" value="submit" routerLink="/quiz-result">Submit Quiz</button>
+<button (click)="model.q1 = false">set one</button> -->
+
+<button (click)="isOn= false">Close Score</button>
+<button (click)="isOn= true;">Submit Quiz</button>
+
+ <!-- <div *ngIf="isOn && model.q1=='4'; then t else el"></div>
+<div><ng-template #t>Answer 1 is correct.</ng-template></div>
+<div><ng-template #el>I'm sorry, Question #1 is incorrect.</ng-template></div>
+<div *ngIf="isOn && model.q2=='2'; then t else el"></div>
+<div><ng-template #t>Answer 2 is correct.</ng-template></div>
+<div><ng-template #el>I'm sorry, Question #2 is incorrect.</ng-template></div>
+<div *ngIf="isOn && model.q3=='1'; then t else el"></div>
+<div><ng-template #t>Answer 3 is correct.</ng-template></div>
+<div><ng-template #el>I'm sorry, Question #3 is incorrect.</ng-template></div> -->
+<!--
+<div>{{model.q1}}</div>
+<div>{{model.q2}}</div>
+<div>{{model.q3}}</div>
+<div>isOn: {{isOn}}</div> -->
+<!-- <div>{{model.q2}}</div>
+<div>{{model.q3}}</div> -->
+</form>
+
+<!-- <app-quiz *ngIf="isOn"></app-quiz> -->
+
+<!-- <app-quiz-result *ngIf="isOn"></app-quiz-result> 
+
+ & model.q1=='4';quizSum+=33.3-->
+ <!-- <div *ngIf="isOn">{{(quizSum+model.q1+model.q2+model.q3)}}</div> -->
+ <div class="score" *ngIf="isOn && model.q1!=='4' && model.q2!=='2' && model.q3!=='1';">Score: {{quizSum}}%</div>
+ <div class="score" *ngIf="isOn && model.q1=='4' && model.q2=='2' && model.q3=='1';">Score: {{quizSum+100}}%</div>
+
+<div class="score" *ngIf="isOn && (model.q1=='4' && model.q2=='2' && model.q3!=='1') || (model.q3=='1' && model.q1=='4' && model.q2!=='2') || (model.q3=='1' && model.q2=='2' && model.q1!=='4');">Score: {{quizSum+66.6}}%</div>
+
+<div class="score" *ngIf="isOn && ((model.q1=='4' && model.q2!=='2' && model.q3!=='1') || (model.q2=='2' && model.q3!=='1' && model.q1!=='4') || (model.q3=='1' && model.q2!=='2' && model.q1!=='4'));">Score: {{quizSum+33.3}}%</div> 
+
+
+
+
+<!-- <div *ngIf="model.q1=='4';">[(ngModel)]="quizSum+1"</div> -->
+<!-- <div *ngIf="model.q2=='2';then quizSum=quizSum+1;"></div>
+<div *ngIf="model.q3=='1';then quizSum=quizSum+1;"></div> -->
+<!-- <div *ngIf="isOn">{{quizSum}}%</div> -->
+<!-- <ng-template #t>Score: {{quizSum+66.6}}%</ng-template>
+<ng-template #el>Score: {{quizSum+33.3}}%</ng-template> -->
+<!-- routerLink="/quiz-result" -->
+<!-- <div *ngIf="isOn">
+{{trackerForm.get('quiz1').value}}
+{{trackerForm.get('quiz2').value}}
+{{trackerForm.get('quiz3').value}}
+</div> -->
