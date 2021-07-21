@@ -31,6 +31,7 @@ export class BookComponent implements OnInit{
   addBook(): void {
     this._bookService.addBook(this.book).subscribe((response)=>{console.log(response)
       this.reset();
+      this.getBooks();
     },
     (error)=>{
       console.log(error);
