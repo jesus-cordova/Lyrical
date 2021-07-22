@@ -35,13 +35,13 @@ public class BookController {
       return ResponseEntity.ok().body("New Book has been saved with ID:" + id);
    }
    
-/*
-   @GetMapping("/book/{id}")
+
+   @GetMapping("/api/book/{id}")
    public ResponseEntity<Book> get(@PathVariable("id") int id) {
       Book book = bookService.get(id);
       return ResponseEntity.ok().body(book);
    }
-*/
+
   
    ///book old dir
    @GetMapping("/api/book")
@@ -50,14 +50,14 @@ public class BookController {
       return ResponseEntity.ok().body(books);
    }
 
-   /*
-   @PutMapping("/book/{id}")
+   
+   @PutMapping("/api/book/{id}")
    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody Book book) {
       bookService.update(id, book);
       return ResponseEntity.ok().body("Book has been updated successfully.");
    }
 
-   
+   /*
    @DeleteMapping("/book/{id}")
    public ResponseEntity<?> delete(@PathVariable("id") int id) {
       bookService.delete(id);
