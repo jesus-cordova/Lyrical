@@ -1,0 +1,9 @@
+<p>dashboard page</p>
+<div class="song-container">
+<div class="song-row" *ngFor= "let song of topSongs">
+<img src={{song.imageURL}}>
+<p >{{song.title}}</p>
+<p >By: {{song.artist}}</p>
+</div>
+</div>
+<button (click)='takeQuiz()'>Take quiz</button>
