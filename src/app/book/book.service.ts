@@ -2,7 +2,7 @@ import { HttpClient,HttpErrorResponse,HttpResponse,HttpRequest,HttpHeaders} from
 import { Injectable } from '@angular/core';
 import { Observable,throwError } from 'rxjs';
 import { Book } from './book';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 //import { Headers, RequestOptions } from '@angular/http';
 //import 'rxjs/add/operator/map'
 //import 'rxjs/add/operator/catch';
@@ -16,7 +16,7 @@ export class BookService{
   //This the GET Method for the frontend
   //An observable is create to view and execute the object in the function
   getAllBooks(): Observable<Book[]>{
-    return this._httpService.get("http://localhost:8081/bookapi/api/book")
+    return this._httpService.get("http://localhost:8080/bookapi/api/book")
     .pipe(map((response: any) => response));
     //    .pipe(map((response: any) => response.catch(this.handleError)));
 
@@ -24,6 +24,12 @@ export class BookService{
   private handleError(error:HttpErrorResponse){
     return throwError(error.message);
   }
+  //PUT method This is used to update data
+  getBookById(bookId: string): Observable<Book>{
+    return this._httpService.get("http://localhost:8080/bookapi/api/book/"+bookId)
+    .pipe(map((response: any) => response),catchError(this.handleError));
+}
+
 //POST method
 //displays the updated data when posting data into the form on the frontend
   addBook(book: Book){
@@ -35,9 +41,13 @@ export class BookService{
 
     //the new way is done in one line that combines both headers and options
     let headers =  {headers: new  HttpHeaders({ 'Content-Type': 'application/json'})};
-
-    //We return the _httpService and post the updated data on to the URL location
-   return this._httpService.post("http://localhost:8081/bookapi/api/book",body,headers);
+    if(book.id){
+      return this._httpService.put('http://localhost:8080/bookapi/api/book/'+book.id,body,headers);
+    }
+    else{
+  //We return the _httpService and post the updated data on to the URL location
+  return this._httpService.post("http://localhost:8080/bookapi/api/book",body,headers);
+    }
   }
 
 }

@@ -24,6 +24,13 @@ export class BookComponent implements OnInit{
       console.log(error);
     });
   }
+  //getting the book id
+  getBookById(bookId: string){
+    this._bookService.getBookById(bookId)
+    .subscribe((bookData) => {this.book =bookData; this.getBooks();},(error)=>{
+      console.log(error);
+    });
+  }
 
   //function to post book into the database
 //calls on the addBook from the book.service.ts and passes the object book into and subscribe the data and print out the result

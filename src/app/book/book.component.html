@@ -3,6 +3,7 @@
 <!--The form that would do the POST meethod in book.service.ts and book.component.ts-->
 <div>
   <form>
+    <input type="hidden" name="book.id" />
     <!--property binding with ngModel to get book.title value from the input and passing it into the event button-->
     Enter Title: <input type="text" [(ngModel)]="book.title" name="title"/><br/>
     Enter Author: <input type="text" [(ngModel)]="book.author" name="author"/><br/>
@@ -17,7 +18,7 @@
     <table border ="1">
       <tr>
           <th>ID</th>
-          <th>name</th>
+          <th>title</th>
           <th>author</th>
           <th>actions</th>
       </tr>
@@ -28,7 +29,7 @@
           <td>{{book.id}}</td>
           <td>{{book.title}}</td>
           <td>{{book.author}}</td>
-          <td>Edit | Delete</td>
+          <td><button (click)=" getBookById(book.id)">Update</button> | Delete</td>
       </tr>
     </table>
 </div>
