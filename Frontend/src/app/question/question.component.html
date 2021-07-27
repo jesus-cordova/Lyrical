@@ -1,0 +1,28 @@
+<div class="whole-container" *ngIf="ready; else noData">
+<div class="question-container" *ngFor="let question of importedQuestions; index as i">
+    <div *ngIf= "currentQuestion == question">
+        <p>Quesion: {{index+1}}/{{totalQuestions}}</p>
+        <p>Finish the lyrics...  {{question.question}}</p>  
+        <input  type="radio" [checked]="answers[i].answer == importedQuestions[i].option1" (change)="onChange($event)"  [id]="i" [name] ="i" [value] ="question.option1">
+        <label >    {{question.option1}}</label><br>
+        <input  type="radio"  [checked]="answers[i].answer == importedQuestions[i].option2" (change)="onChange($event)" [id]="i" [name]="i" [value]="question.option2">
+        <label >    {{question.option2}}</label><br>
+        <input   type="radio" [checked]="answers[i].answer == importedQuestions[i].option3" (change)="onChange($event)" [id]="i" [name]="i" [value]="question.option3"  > 
+        <label >    {{question.option3}}</label><br>
+        <input  type="radio" [checked]="answers[i].answer == importedQuestions[i].answer" (change)="onChange($event)" [id]="i" [name]="i" [value] = "question.answer">
+        <label >    {{question.answer}}</label><br>
+       <div [hidden]="true">{{i+1}}</div> 
+    </div>
+</div>
+<div class="button-container">
+<button (click)="onPreviousButton()" [disabled]="index == 0"><mat-icon>arrow_back_ios</mat-icon></button>
+<button (click)="onNextButton()" [hidden]="index == 4"><mat-icon>arrow_forward_ios</mat-icon></button>
+<button (click)="onSubmitButton()" [hidden]="index != 4"><mat-icon>upload</mat-icon></button>
+</div>
+</div>
+<ng-template #noData>
+    <div class="loading">
+    <mat-spinner></mat-spinner>
+    <p>Gernerating your custom quiz....</p>
+    </div>
+</ng-template>

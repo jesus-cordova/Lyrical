@@ -1,0 +1,68 @@
+.song-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 41%;
+  & .song-row {
+    display: flex;
+    align-items: center;
+
+    & p {
+      font-size: 24px;
+      margin-left: 2%;
+      color: white;
+      font-family: "Yusei Magic", sans-serif;
+    }
+    & img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.button-container {
+  margin-top: 10%;
+  text-align: center;
+
+  & button {
+    font-size: 19px;
+    background-color: white;
+    color: #1db954;
+    width: 153px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  & button:hover {
+    color: white;
+    background-color: black;
+  }
+}
+
+.whole-container {
+  background-image: linear-gradient(to right, black, #1db954);
+  background-size: auto;
+
+  .header-container {
+    text-align: center;
+    & p {
+      text-align: center;
+      color: white;
+      font-size: 25px;
+    }
+
+    & button {
+      font-size: 19px;
+      background-color: white;
+      color: #1db954;
+      width: 153px;
+      height: 40px;
+      border: 1px solid black;
+      text-align: center;
+      margin-bottom: 5%;
+    }
+    & button:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+}

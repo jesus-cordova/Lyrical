@@ -1,0 +1,21 @@
+.result-container {
+  text-align: center;
+  margin-top: 10%;
+
+  & p {
+    font-size: 30px;
+  }
+  & button {
+    font-size: 19px;
+    background-color: black;
+    color: #1db954;
+    width: 153px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  & button:hover {
+    color: black;
+    background-color: #1db954;
+  }
+}

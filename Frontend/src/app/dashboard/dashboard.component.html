@@ -1,0 +1,16 @@
+<div class="whole-container">
+<div class="header-container">
+<p><mat-icon>person</mat-icon> {{username | uppercase}}</p>
+<button (click)='logout()'>Logout</button>
+</div>
+<div class="song-container">
+<div class="song-row" *ngFor= "let song of topSongs">
+<img src={{song.imageURL}}>
+<p >{{song.title}}</p>
+<p >By: {{song.artist}}</p>
+</div>
+</div>
+<div class="button-container">
+<button (click)='takeQuiz()'>Take quiz</button>
+</div>
+</div>

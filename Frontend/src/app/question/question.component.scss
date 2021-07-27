@@ -1,0 +1,31 @@
+html {
+  background-color: #f1ecc3;
+}
+.button-container {
+  margin-top: 10%;
+  text-align: center;
+  & button {
+    padding: 0;
+    border: none;
+    background: none;
+    margin-right: 10%;
+  }
+}
+
+.loading {
+  margin: 45%;
+  & p {
+    text-align: center;
+    color: black;
+    width: 300px;
+  }
+}
+
+.question-container {
+  display: flex;
+  justify-content: center;
+}
+
+.whole-container {
+  margin-top: 10%;
+}

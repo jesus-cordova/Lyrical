@@ -1,0 +1,63 @@
+.whole-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/LYRICAL.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & a {
+    margin-top: 5%;
+    & button {
+      font-size: 19px;
+      background-color: white;
+      color: #1db954;
+      width: 153px;
+      height: 40px;
+      border: 1px solid black;
+      text-align: center;
+    }
+    & button:hover {
+      color: black;
+      background-color: #1db954;
+    }
+  }
+
+  & .header-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-left: 70px;
+    & h1 {
+      margin-right: 70px;
+      color: white;
+      flex: 0 0 auto;
+    }
+  }
+  & .horizontal-lines {
+    margin-left: 30px;
+    & hr {
+      display: inline-block;
+      width: 200px;
+      margin-right: 30px;
+      border: 0;
+      border-top: 2px solid #1db954;
+    }
+  }
+  & .content-container {
+    display: flex;
+    margin-left: 45px;
+    & p {
+      width: 250px;
+      color: white;
+      flex: 1 1 0px;
+      line-height: 1.5;
+
+      font-size: 15px;
+      margin-right: 30px;
+    }
+  }
+}
