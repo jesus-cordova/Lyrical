@@ -1,46 +1,27 @@
-# PROJECT NAME
+# Lyrical
 
 ## Project Description
 
-Here goes your awesome project description!
+Ever wanted to know if you truly know your favorite songs? Lyrical web app does just that. Lyrical will pull 10 songs that you've played the most on your Spotify account. It will then generate a quiz with 3 question, each question will have a random lyric from a random favorite song as the question. Your mission is to select the following lyrics. After you have taken the quiz it will show you your results.
 
 ## Technologies Used
 
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Angular 2+
+* Java 
+* Hibernate 
+* AWS 
+* SQL
+* Spring Framework
+* JUnit
+* Log4J 
+* HTML 
+* CSS
 
 ## Features
 
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* User can login with Spotify OAuth
+* User can see their top 10 songs from spotify library
+* User can take a quiz with 5 random questions from the users top 10 songs
 
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
 
-## Getting Started
-   
-(include git clone command)
-(include all environment setup steps)
-
-> Be sure to include BOTH Windows and Unix command  
-> Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
-
-- All the `code` required to get started
-- Images of what it should look like
-
-## Usage
-
-> Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
-
-## Contributors
-
-> Here list the people who have contributed to this project. (ignore this section, if its a solo project)
-
-## License
-
-This project uses the following license: [<license_name>](<link>).
 
