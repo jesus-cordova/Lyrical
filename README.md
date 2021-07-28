@@ -16,7 +16,12 @@ Ever wanted to know if you truly know your favorite songs? Lyrical web app does 
 * Log4J 
 * HTML 
 * CSS
+## Contributors
 
+* Jesus Frontend
+* Carla Junit testing
+* Stephan lyrics api implementation
+* Gerardo APIs for angular
 ## Features
 
 * User can login with Spotify OAuth
